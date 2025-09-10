@@ -182,6 +182,7 @@
                             <option>ასოცირებული პროფესორი</option>
                             <option>ასისტენტ-პროფესორი</option>
                             <option>ასისტენტი</option>
+                            <option>მოწვეული ლექტორი</option>
                         </select>
                     </td>
                 </tr>
@@ -780,6 +781,10 @@
             if (atitleval === 4) {
                 atitle_ge.innerHTML = 'ასისტენტი';
                 atitle_eng.innerHTML = 'Assistant';
+            }
+            if (atitleval === 5) {
+                atitle_ge.innerHTML = 'მოწვეული ლექტორი';
+                atitle_eng.innerHTML = 'Invited Lecturer';
             }
         };
         function jtitleYorN() {
