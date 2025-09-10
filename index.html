@@ -161,6 +161,31 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label_container"><label for="atitleyorn">აკადემიური თანამდებობის გამოჩენა:</label></td>
+                    <td>
+                        <input type="checkbox" name="atitley/n" id="atitleyorn" value="atitleyorn"
+                            onclick="atitleYorN()">
+                    </td>
+                </tr>
+                <tr id="atitle_input_tr" class="displaynone">
+                    <td class="label_container"><label for="atitle_input">აკადემიური თანამდებობა:</label>
+                    </td>
+                    <td>
+                        <select name="atitle_input" id="atitle_input" oninput="atitle()">
+                            <option selected value="null">აირჩიეთ</option>
+                            <option>პროფესორი</option>
+                            <option>ასოცირებული პროფესორი</option>
+                            <option>ასისტენტ-პროფესორი</option>
+                            <option>ასისტენტი</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
                     <td class="label_container"><label for="faculty_input">ადმინისტრაციული ქვედანაყოფი:</label>
                     </td>
                     <td>
@@ -250,31 +275,6 @@
                                     value="მევენახეობა-მეღვინეობის ფაკულტეტი|Faculty of Viticulture-Winemaking|#c12f3b|https://ciu.edu.ge/ka/faculty/viticulture-winemaking|https://www.facebook.com/CIUniversity/|https://www.instagram.com/ciu115/">
                                     მევენახეობა-მეღვინეობის ფაკულტეტი</option>
                             </optgroup>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="label_container"><label for="atitleyorn">აკადემიური თანამდებობის გამოჩენა:</label></td>
-                    <td>
-                        <input type="checkbox" name="atitley/n" id="atitleyorn" value="atitleyorn"
-                            onclick="atitleYorN()">
-                    </td>
-                </tr>
-                <tr id="atitle_input_tr" class="displaynone">
-                    <td class="label_container"><label for="atitle_input">აკადემიური თანამდებობა:</label>
-                    </td>
-                    <td>
-                        <select name="atitle_input" id="atitle_input" oninput="atitle()">
-                            <option selected value="null">აირჩიეთ</option>
-                            <option>პროფესორი</option>
-                            <option>ასოცირებული პროფესორი</option>
-                            <option>ასისტენტ-პროფესორი</option>
-                            <option>ასისტენტი</option>
                         </select>
                     </td>
                 </tr>
