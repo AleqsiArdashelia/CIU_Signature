@@ -177,7 +177,7 @@
                     </td>
                     <td>
                         <select name="atitle_input" id="atitle_input" oninput="atitle()">
-                            <option selected value="null">აირჩიეთ</option>
+                            <option selected value="">აირჩიეთ</option>
                             <option>პროფესორი</option>
                             <option>ასოცირებული პროფესორი</option>
                             <option>ასისტენტ-პროფესორი</option>
@@ -196,7 +196,7 @@
                     </td>
                     <td>
                         <select name="faculty_input" id="faculty_input" oninput="faculty()">
-                            <option selected value="null">აირჩიეთ</option>
+                            <option selected value="**#c12f3b*https://ciu.edu.ge*https://www.facebook.com/CIUniversity/*https://www.instagram.com/ciu115/">აირჩიეთ</option>
                             <optgroup label="კანცლერის აპარატი">
                                 <option
                                     value="კანცლერი | Chancellor**#c12f3b*https://ciu.edu.ge/ka/about/university-management/chancellor*https://www.facebook.com/CIUniversity/*https://www.instagram.com/ciu115/">
@@ -347,7 +347,8 @@
                 </tr>
                 -->
                 <tr>
-                    <td class="label_container"><label for="wphoneyorn">შიდა სატელეფონო ნომრის გამოჩენა:</label>
+                    <td class="label_container">
+                        <label for="wphoneyorn">შიდა სატელეფონო ნომრის გამოჩენა:</label>
                     </td>
                     <td>
                         <input type="checkbox" name="wphoney/n" id="wphoneyorn" value="wphoneyorn"
@@ -355,19 +356,22 @@
                     </td>
                 </tr>
                 <tr id="wphone_input_tr" class="displaynone">
-                    <td class="label_container"><label for="wphone_input">ნომერი:</label></td>
-                    <td><input type="number" placeholder="შიდა ნომერი" id="wphone_input" name="wphone_input"
-                            oninput="wphone()"></td>
+                    <td class="label_container">
+                        <label for="wphone_input">ნომერი:</label>
+                    </td>
+                    <td>
+                        <input type="number" placeholder="შიდა ნომერი" id="wphone_input" name="wphone_input"
+                            oninput="wphone()">
+                    </td>
                 </tr>
                 <tr>
-                <tr>
-                    <td class="label_container"><label for="pphoneyorn">მობილური ტელეფონის ნომრის გამოჩენა:</label>
+                    <td class="label_container">
+                        <label for="pphoneyorn">მობილური ტელეფონის ნომრის გამოჩენა:</label>
                     </td>
                     <td>
                         <input type="checkbox" name="pphoney/n" id="pphoneyorn" value="pphoneyorn"
                             onclick="phoneyorn()">
                     </td>
-                </tr>
                 </tr>
                 <tr id="pphone_input_tr" class="displaynone">
                     <td class="label_container"><label for="pphone_input">ნომერი:</label></td>
@@ -391,10 +395,19 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label_container">
+                        <label for="addressyorn">სამსახურის მისამართის გამოჩენა:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="addressy/n" id="addressyorn" value="addressyorn"
+                            onclick="addressYorN()">
+                    </td>
+                </tr>
+                <tr class="address_input_tr displaynone">
                     <td class="label_container"><label for="address_input"> შენობა:</label></td>
                     <td>
                         <select name="atitle_input" id="address_input" oninput="address()">
-                            <option selected value="null">აირჩიეთ</option>
+                            <option selected value="*">აირჩიეთ</option>
                             <option
                                 value="საქართველო, თბილისი, ჩარგლის ქ. 73, 0178 * 73, Chargali St., 0178 Tbilisi, Georgia">
                                 I კორპუსი/II კორპუსი/ბიბლიოთეკა</option>
@@ -404,7 +417,7 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class="address_input_tr displaynone">
                     <td class="label_container"><label for="room_input">ოთახის ნომერი:</label></td>
                     <td><input type="text" placeholder="ოთახის ნომერი" id="room_input" name="room_input"
                             oninput="room()">
@@ -468,8 +481,8 @@
 
     <div id="signature-card">
 
-        <table cellpadding="0" cellspacing="0" style="vertical-align:-webkit-baseline-middle;font-size:small;min-width:700px!important;"
-            id="signature">
+        <table cellpadding="0" cellspacing="0"
+            style="vertical-align:-webkit-baseline-middle;font-size:small;min-width:700px!important;" id="signature">
             <tr>
                 <td>
                     <table cellpadding="0" cellspacing="0"
@@ -577,7 +590,7 @@
                                                 style="text-decoration:none;color: #000 !important;font-size:10px;">ciu.edu.ge</a>
                                         </td>
                                     </tr>
-                                    <tr height="25" style="vertical-align:middle;">
+                                    <tr height="25" style="vertical-align:middle;display:none" id="address_ifany">
                                         <td width="30" style="vertical-align:middle;">
                                             <table cellpadding="0" cellspacing="0"
                                                 style="vertical-align:-webkit-baseline-middle;font-size:small;">
@@ -759,15 +772,15 @@
             else {
                 document.getElementById('atitle').style.display = 'none';
                 document.getElementById('atitle_input_tr').style.display = 'none';
-                atitle_ge.innerHTML = null;
-                atitle_eng.innerHTML = null;
+                atitle_ge.innerHTML = "";
+                atitle_eng.innerHTML = "";
             }
         };
         function atitle() {
             let atitleval = document.getElementById('atitle_input').selectedIndex;
             if (atitleval == 0) {
-                atitle_ge.innerHTML = null;
-                atitle_eng.innerHTML = null;
+                atitle_ge.innerHTML = "";
+                atitle_eng.innerHTML = "";
             }
             if (atitleval === 1) {
                 atitle_ge.innerHTML = 'პროფესორი';
@@ -802,8 +815,8 @@
                 document.getElementById('jtitle').style.display = 'none';
                 document.getElementsByClassName('jtitle_input_tr')[0].style.display = 'none';
                 document.getElementsByClassName('jtitle_input_tr')[1].style.display = 'none';
-                document.getElementById("jtitle_ge").innerHTML = null;
-                document.getElementById("jtitle_eng").innerHTML = null;
+                document.getElementById("jtitle_ge").innerHTML = "";
+                document.getElementById("jtitle_eng").innerHTML = "";
             }
         };
         function jtitle_ge() {
@@ -824,8 +837,8 @@
                 document.getElementById('dep').style.display = 'none';
                 document.getElementsByClassName('dep_input_tr')[0].style.display = 'none';
                 document.getElementsByClassName('dep_input_tr')[1].style.display = 'none';
-                document.getElementById("dep_ge").innerHTML = null;
-                document.getElementById("dep_eng").innerHTML = null;
+                document.getElementById("dep_ge").innerHTML = "";
+                document.getElementById("dep_eng").innerHTML = "";
             };
         };
         function dep_ge() {
@@ -843,7 +856,7 @@
             if (!wphoneyorn.checked) {
                 document.getElementById('wphone_div').style.display = 'none';
                 document.getElementById('wphone_input_tr').style.display = 'none';
-                document.getElementById('wphone').innerHTML = null;
+                document.getElementById('wphone').innerHTML = "";
                 document.getElementById('wphone').parentElement.removeAttribute('href');
 
             }
@@ -855,7 +868,7 @@
             if (!pphoneyorn.checked) {
                 document.getElementById('pphone_div').style.display = 'none';
                 document.getElementById('pphone_input_tr').style.display = 'none';
-                document.getElementById('pphone').innerHTML = null;
+                document.getElementById('pphone').innerHTML = "";
                 document.getElementById('pphone').removeAttribute('href');
             }
             if (wphoneyorn.checked || pphoneyorn.checked) {
@@ -882,6 +895,22 @@
         function email() {
             document.getElementById('email').innerHTML = document.getElementById("email_input").value;
             document.getElementById('email').href = "mailto:" + document.getElementById("email_input").value;
+        }
+
+        function addressYorN() {
+            if (document.getElementById('addressyorn').checked) {
+                document.getElementById('address_ifany').style.display = 'table-row';
+                document.getElementsByClassName('address_input_tr')[0].style.display = 'table-row';
+                document.getElementsByClassName('address_input_tr')[1].style.display = 'table-row';
+
+            }
+            else {
+                document.getElementById('address_ifany').style.display = 'none';
+                document.getElementsByClassName('address_input_tr')[0].style.display = 'none';
+                document.getElementsByClassName('address_input_tr')[1].style.display = 'none';
+                document.getElementById("address").innerHTML = "";
+                document.getElementById("room").innerHTML = "";
+            }
         }
         function address() {
             let selectAddress = document.getElementById('address_input').value.split('*');
